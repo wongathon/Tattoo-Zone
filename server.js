@@ -8,6 +8,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var passport   = require('passport');
 var exphbs     = require('express-handlebars');
+var session    = require('express-session');
  
 // Sets up the Express App
 // =============================================================

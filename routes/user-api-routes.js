@@ -1,4 +1,5 @@
 var db = require("../models");
+var passport = require('./config/passport.js');
 
 module.exports = function(app) {
     app.post('/signin', passport.authenticate('local-signin', {
