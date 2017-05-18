@@ -1,7 +1,7 @@
 var db = require("../models");
-var passport = require('./config/passport.js');
+var pass = require('../config/passport.js');
 
-module.exports = function(app) {
+module.exports = function(app, passport) {
     app.post('/signin', passport.authenticate('local-signin', {
         successRedirect: '/dashboard',
         failureRedirect: '/signin'

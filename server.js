@@ -13,7 +13,7 @@ var session    = require('express-session');
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 8082;
 
 // Requiring our models for syncing
 var db = require("./models");
@@ -31,7 +31,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 
      //For Handlebars
-    app.set('views', '../public/views')
+    app.set('views', './public/views')
     app.engine('hbs', exphbs({extname: '.hbs'}));
     app.set('view engine', '.hbs');
 
@@ -40,9 +40,10 @@ app.use(express.static("./public"));
 
 // Routes =============================================================
 
+require('./config/passport')(passport);
 require("./routes/html-routes.js")(app);
 require("./routes/post-api-routes.js")(app);
-require("./routes/user-api-routes.js")(app);
+require("./routes/user-api-routes.js")(app, passport);
 
 // Syncing our sequelize models and then starting our express app
 db.sequelize.sync({ force: true }).then(function() {
