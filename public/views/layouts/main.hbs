@@ -3,29 +3,41 @@
    <head>
       <meta charset="utf-8">
       <title>Tattoo Zone</title>
+      <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
       <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
       <link rel="stylesheet" href="../css/style.css" />
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
    </head>
    <body>
-      <div class="container">
-      <div class="header clearfix">
-        <nav>
-          <ul class="nav nav-pills pull-right">
-            {{#if user}}
-               <li role="presentation"><a href="/dashboard">Dashboard</a></li>
-               <li role="presentation"><a href="/logout">Logout</a></li>
-            {{else}}
-               <li role="presentation"><a href="/signin">Login</a></li>
-               <li role="presentation"><a href="/signup">Register</a></li>
-            {{/if}}
-          </ul>
-        </nav>
-        <h3 class="text-muted">Tattoo-Zone</h3>
-      </div>
+     <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <ul class="nav nav-pills pull-right">
+        <li role="presentation"><a href="/aboutus">About Us</a></li>
+        {{#if user}}
+           <li role="presentation"><a href="/dashboard">Dashboard</a></li>
+           <li role="presentation"><a href="/logout">Logout</a></li>
+        {{else}}
+           <li role="presentation"><a href="/signin">Login</a></li>
+           <li role="presentation"><a href="/signup">Register</a></li>
+        {{/if}}
+      </ul>
+      <a class="navbar-brand"><i class="glyphicon glyphicon glyphicon-tags"></i> Tattoo-Zone</a>
+      <div class="nav-collapse">
+    <!-- .nav, .navbar-search, .navbar-form, etc -->
+  </div>  
+    </div>
 
+  </nav>
+      <div class="container">
       <div class="row">
-        <div class="col-lg-12">
            {{#if success_msg}}
               <div class="alert alert-sucess">{{sucess_msg}}</div>
             {{/if}}
@@ -37,11 +49,10 @@
              {{/if}}
           {{{body}}}
         </div>
-
+     </div> <!-- /container -->
       <footer class="footer">
         <p>&copy;2017 Tattoo-Zone</p>
       </footer>
 
-    </div> <!-- /container -->
    </body>
 </html>
