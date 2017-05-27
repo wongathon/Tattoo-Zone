@@ -1,5 +1,5 @@
 <div class="col-sm-6 col-sm-offset-3">
-<h2 class="page-header">Register</h2>
+  <!-- <h2 class="page-header">Register</h2>
 {{#if errors}}
    {{#each errors}}
       <div class="alert alert-danger">{{msg}}</div>
@@ -22,10 +22,49 @@
       <label>Password</label>
       <input type="password" class="form-control" placeholder="Password" name="password" />
    </div>
-   <!-- <div class="form-group">
+   <div class="form-group">
       <label>Confirm Password</label>
       <input type="password" class="form-control" placeholder="Password" name="password2" />
    </div> -->
-   <button type="submit" class="btn btn-default">Submit</button>
-</form>
-</div>
+  <!-- <button type="submit" class="btn btn-default">Submit</button>
+</form> -->
+
+  <div class="form-signup">
+
+    <h1>Sign Up for Free</h1>
+
+    <form action="/signup" method="post">
+
+      <div class="top-row">
+        <div class="field-wrap">
+          <label>
+                First Name<span class="req">*</span>
+              </label>
+          <input type="text" required autocomplete="off" />
+        </div>
+
+        <div class="field-wrap">
+          <label>
+                Last Name<span class="req">*</span>
+              </label>
+          <input type="text" required autocomplete="off" />
+        </div>
+      </div>
+
+      <div class="field-wrap">
+        <label>
+              Email Address<span class="req">*</span>
+            </label>
+        <input type="email" required autocomplete="off" />
+      </div>
+
+      <div class="field-wrap">
+        <label>
+              Set A Password<span class="req">*</span>
+            </label>
+        <input type="password" required autocomplete="off" />
+        </div>
+        <button type="submit" class="button button-block"/>Get Started</button>
+      </form>
+      </div>
+  </div>

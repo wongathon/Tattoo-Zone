@@ -1,5 +1,5 @@
 <div class="col-sm-6 col-sm-offset-3">
-<h2 class="page-header">Account Login</h2>
+<!-- <h2 class="page-header">Account Login</h2>
 <form method="post" action="/signin">
    <div class="form-group">
       <label>Username</label>
@@ -10,5 +10,34 @@
       <input type="password" class="form-control" name="password" placeholder="Password" />
    </div>
    <button type="submit" class="btn btn-default">Submit</button>
-</form>
+</form> -->
+
+<div class="form-signin">
+  <div id="signin">
+    <h1>Welcome Back!</h1>
+
+    <form action="/signin" method="post">
+
+      <div class="field-wrap">
+        <label>
+              Email Address<span class="req">*</span>
+            </label>
+        <input type="email" required autocomplete="off" />
+      </div>
+
+      <div class="field-wrap">
+        <label>
+              Password<span class="req">*</span>
+            </label>
+        <input type="password" required autocomplete="off" />
+      </div>
+
+      <p class="forgot"><a href="#">Forgot Password?</a></p>
+
+      <button class="button button-block" />Log In</button>
+
+    </form>
+
+  </div>
+</div>
 </div>
