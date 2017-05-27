@@ -3,22 +3,15 @@
    <head>
       <meta charset="utf-8">
       <title>Tattoo Zone</title>
-      <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
       <link rel="stylesheet" href="../css/style.css" />
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
    </head>
    <body>
      <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
+       <div class="container-fluid">
+      <a class="navbar-brand"><i class="glyphicon glyphicon glyphicon-tags"></i> Tattoo-Zone</a>
       <ul class="nav nav-pills pull-right">
         <li role="presentation"><a href="/aboutus">About Us</a></li>
         {{#if user}}
@@ -29,15 +22,10 @@
            <li role="presentation"><a href="/signup">Register</a></li>
         {{/if}}
       </ul>
-      <a class="navbar-brand"><i class="glyphicon glyphicon glyphicon-tags"></i> Tattoo-Zone</a>
-      <div class="nav-collapse">
-    <!-- .nav, .navbar-search, .navbar-form, etc -->
-  </div>  
     </div>
-
   </nav>
       <div class="container">
-      <div class="row">
+         <div class="row">
            {{#if success_msg}}
               <div class="alert alert-sucess">{{sucess_msg}}</div>
             {{/if}}
@@ -50,9 +38,26 @@
           {{{body}}}
         </div>
      </div> <!-- /container -->
-      <footer class="footer">
-        <p>&copy;2017 Tattoo-Zone</p>
-      </footer>
+
+     <!-- Footer -->
+
+      <div class="container-fluid">
+        <div class="row">
+             <footer id="footer">
+     <ul class="icons">
+       <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+       <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+       <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+       <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+       <li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+     </ul>
+     <ul class="copyright">
+       <li>&copy; <a href="/">Tattoo-Zone</a></li><li>Design: GWCB Team 5</li>
+     </ul>
+        </footer>
+   </div>
+  </div>
+
 
    </body>
 </html>

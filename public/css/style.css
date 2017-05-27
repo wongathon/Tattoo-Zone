@@ -1,4 +1,7 @@
+@import url(font-awesome.min.css);
 @import url('https://fonts.googleapis.com/css?family=Quintessential');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic");
+
 .form-control {
   margin-bottom: 10px;
 }
@@ -22,8 +25,8 @@ body {
   color: white;
 }
 
-ul.nav.nav-pills.pull-right {
-    color: white;
+li > a {
+    color: white !important;
 }
 nav.navbar {
   background-color: #9c3493;
@@ -35,7 +38,8 @@ nav.navbar {
   font-family: 'Quintessential', cursive;
   /*float: none;*/
   font-size: 2em;
-  padding-bottom: .25em;
+  /*padding-bottom: .25em;*/
+  padding-top: 0.125em;
 }
 
 /*.container-fluid {
@@ -45,3 +49,317 @@ nav.navbar {
   width: 100%;
   color: white !important;
 }*/
+/* Footer */
+
+	#footer {
+		padding: 6em 0 4em 0 ;
+		background-color: #1d242a;
+		text-align: center;
+	}
+
+		#footer .icons {
+			font-size: 1.25em;
+		}
+
+			#footer .icons a {
+				color: rgba(255, 255, 255, 0.5);
+			}
+
+				#footer .icons a:hover {
+					color: #fff;
+				}
+
+		#footer .copyright {
+			color: rgba(255, 255, 255, 0.5);
+			font-size: 0.8em;
+			letter-spacing: 0.225em;
+			list-style: none;
+			padding: 0;
+			text-transform: uppercase;
+		}
+
+			#footer .copyright li {
+				border-left: solid 1px rgba(255, 255, 255, 0.5);
+				display: inline-block;
+				line-height: 1em;
+				margin-left: 1em;
+				padding-left: 1em;
+			}
+
+				#footer .copyright li:first-child {
+					border-left: 0;
+					margin-left: 0;
+					padding-left: 0;
+				}
+
+				#footer .copyright li a {
+					color: inherit;
+				}
+
+					#footer .copyright li a:hover {
+						color: #fff;
+					}
+
+				@media screen and (max-width: 480px) {
+
+					#footer .copyright li {
+						border: 0;
+						display: block;
+						line-height: 1.65em;
+						margin: 0;
+						padding: 0.5em 0;
+					}
+
+				}
+
+		@media screen and (max-width: 980px) {
+
+			#footer {
+				padding: 4em 3em 2em 3em ;
+			}
+
+		}
+
+		@media screen and (max-width: 736px) {
+
+			#footer {
+				padding: 3em 2em 1em 2em ;
+			}
+
+		}
+
+    /* List */
+
+  	ol {
+  		list-style: decimal;
+  		margin: 0 0 2em 0;
+  		padding-left: 1.25em;
+  	}
+
+  		ol li {
+  			padding-left: 0.25em;
+  		}
+
+  	ul {
+  		list-style: disc;
+  		margin: 0 0 2em 0;
+  		padding-left: 1em;
+  	}
+
+  		ul li {
+  			padding-left: 0.5em;
+  		}
+
+  		ul.alt {
+  			list-style: none;
+  			padding-left: 0;
+  		}
+
+  			ul.alt li {
+  				border-top: solid 1px #fff;
+  				padding: 0.5em 0;
+  			}
+
+  				ul.alt li:first-child {
+  					border-top: 0;
+  					padding-top: 0;
+  				}
+
+  		ul.icons {
+  			cursor: default;
+  			list-style: none;
+  			padding-left: 0;
+  		}
+
+  			ul.icons li {
+  				display: inline-block;
+  				padding: 0 1em 0 0;
+  			}
+
+  				ul.icons li:last-child {
+  					padding-right: 0 !important;
+  				}
+
+  			ul.icons.major {
+  				padding: 1em 0;
+  			}
+
+  				ul.icons.major li {
+  					padding-right: 3.5em;
+  				}
+
+  					@media screen and (max-width: 736px) {
+
+  						ul.icons.major li {
+  							padding: 0 1em !important;
+  						}
+
+  					}
+
+  		ul.actions {
+  			cursor: default;
+  			list-style: none;
+  			padding-left: 0;
+  		}
+
+  			ul.actions li {
+  				display: inline-block;
+  				padding: 0 1.5em 0 0;
+  				vertical-align: middle;
+  			}
+
+  				ul.actions li:last-child {
+  					padding-right: 0;
+  				}
+
+  			ul.actions.small li {
+  				padding: 0 0.75em 0 0;
+  			}
+
+  			ul.actions.vertical li {
+  				display: block;
+  				padding: 1.5em 0 0 0;
+  			}
+
+  				ul.actions.vertical li:first-child {
+  					padding-top: 0;
+  				}
+
+  				ul.actions.vertical li > * {
+  					margin-bottom: 0;
+  				}
+
+  			ul.actions.vertical.small li {
+  				padding: 0.75em 0 0 0;
+  			}
+
+  				ul.actions.vertical.small li:first-child {
+  					padding-top: 0;
+  				}
+
+  			ul.actions.fit {
+  				display: table;
+  				margin-left: -1.5em;
+  				padding: 0;
+  				table-layout: fixed;
+  				width: calc(100% + 1.5em);
+  			}
+
+  				ul.actions.fit li {
+  					display: table-cell;
+  					padding: 0 0 0 1.5em;
+  				}
+
+  					ul.actions.fit li > * {
+  						margin-bottom: 0;
+  					}
+
+  				ul.actions.fit.small {
+  					margin-left: -0.75em;
+  					width: calc(100% + 0.75em);
+  				}
+
+  					ul.actions.fit.small li {
+  						padding: 0 0 0 0.75em;
+  					}
+
+  			@media screen and (max-width: 736px) {
+
+  				ul.actions li {
+  					display: block;
+  					padding: 1em 0 0 0;
+  					text-align: center;
+  					width: 100%;
+  				}
+
+  					ul.actions li:first-child {
+  						padding-top: 0;
+  					}
+
+  					ul.actions li > * {
+  						margin: 0 auto !important;
+  						max-width: 30em;
+  						width: 100%;
+  					}
+
+  						ul.actions li > *.icon:before {
+  							margin-left: -1em;
+  						}
+
+  				ul.actions.small li {
+  					padding: 0.5em 0 0 0;
+  				}
+
+  					ul.actions.small li:first-child {
+  						padding-top: 0;
+  					}
+
+  			}
+
+  	dl {
+  		margin: 0 0 2em 0;
+  	}
+    /* Icon */
+
+    	.icon {
+    		text-decoration: none;
+    		border-bottom: none;
+    		position: relative;
+    	}
+
+    		.icon:before {
+    			-moz-osx-font-smoothing: grayscale;
+    			-webkit-font-smoothing: antialiased;
+    			font-family: FontAwesome;
+    			font-style: normal;
+    			font-weight: normal;
+    			text-transform: none !important;
+    		}
+
+    		.icon > .label {
+    			display: none;
+    		}
+
+    		.icon.major {
+    			-moz-transform: rotate(-45deg);
+    			-webkit-transform: rotate(-45deg);
+    			-ms-transform: rotate(-45deg);
+    			transform: rotate(-45deg);
+    			border-radius: 3px;
+    			border: solid 2px #fff;
+    			display: inline-block;
+    			font-size: 1.35em;
+    			height: calc(3em + 2px);
+    			line-height: 3em;
+    			text-align: center;
+    			width: calc(3em + 2px);
+    		}
+
+    			.icon.major:before {
+    				-moz-transform: rotate(45deg);
+    				-webkit-transform: rotate(45deg);
+    				-ms-transform: rotate(45deg);
+    				transform: rotate(45deg);
+    				display: inline-block;
+    				font-size: 1.5em;
+    			}
+
+    			@media screen and (max-width: 736px) {
+
+    				.icon.major {
+    					font-size: 1em;
+    				}
+
+    			}
+
+    		.icon.style1 {
+    			color: #00ffcc;
+    		}
+
+    		.icon.style2 {
+    			color: #00f0ff;
+    		}
+
+    		.icon.style3 {
+    			color: #76ddff;
+    		}
