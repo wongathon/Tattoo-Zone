@@ -48,10 +48,9 @@ app.engine('.hbs', exphbs({
 app.set('view engine', '.hbs');
 
 // Static directory
-app.use(express.static("./public"));
-
-//load passport strategies
-
+app.use(express.static(__dirname + '/public'));
+app.use("/js", express.static(__dirname + '/js'));
+app.use("/css", express.static(__dirname + '/css'));
 
 // Routes =============================================================
 
