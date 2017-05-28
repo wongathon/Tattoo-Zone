@@ -35,11 +35,11 @@ module.exports = function(app) {
 
 // Handle user registration
     app.get('/signup', function(req, res) {
-        res.render('signup');
+        res.render('signup', { message: req.flash('signupMessage') });
     });
 
     app.get('/signin', function(req, res) {
-        res.render('signin');
+        res.render('signin', { message: req.flash('signinError') });
     });
 
     app.get('/dashboard', isLoggedIn, function(req, res) {
@@ -54,8 +54,10 @@ module.exports = function(app) {
     });
 
     function isLoggedIn(req, res, next) {
-        if (req.isAuthenticated())
-            return next();
-        res.redirect('/signin');
-    }
+        if (req.isAuthenticated()) {
+          return next();
+        } else {
+          res.redirect('/signin');
+        }
 };
+}
