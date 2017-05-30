@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             notEmpty: true
         },
-        lastname: {
+        lastname: { 
             type: DataTypes.STRING,
             notEmpty: true
         },
