@@ -368,6 +368,31 @@ nav.navbar {
     			color: #76ddff;
     		}
 
+/* Post Image Overlay */
+.post-image {
+  width: 293px;
+  height: 293px;
+}
+
+.image-overlay {
+  width: 293px;
+  height: 293px;
+  background-color: #777777;
+  z-index:  1;
+  opacity: 0.5;
+    position: fixed;
+    top: 0.5em;
+    display: none;
+}
+
+.overlay-text {
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  font: Helvetica, Arial, sans-serif;
+}
+
+
 /* Form Signin - Signup */
 
 .tab>a {
@@ -518,3 +543,5 @@ textarea {
   margin-top: -20px;
   text-align: right;
 }
+
+

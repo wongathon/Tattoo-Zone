@@ -12,24 +12,51 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
-  // GET route for getting all of the posts
+  // DEFAULT GET route for getting all of the posts
   app.get("/api/posts", function(req, res) {
     var query = {};
-    if (req.query.author_id) {
-      query.AuthorId = req.query.author_id;
+    if (req.query.user_id) {
+      query.UserId = req.query.user_id;
     }
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Author
     db.Post.findAll({
+
+      //default order
+
       where: query,
-      include: [db.Author]
+      include: [db.User]
     }).then(function(dbPost) {
       res.json(dbPost);
     });
   });
 
-  // Get rotue for retrieving a single post
+  //OPTIONAL ROUTES FOR HOMEPAGE DISPLAY
+  //GET route for ALL TIME posts
+  app.get("/api/alltime-posts", function(req, res){
+
+    db.Post.findAll({
+      //***SORT BY LIKES - ALL
+      order: '"likes" DESC'
+    }).then(function(dbPost){
+      res.json(dbPost);
+    });
+  });
+
+  //GET route for NEW posts
+  app.get("/api/new-posts", function(req, res){
+
+    db.Post.findAll({
+      //***sort by 
+      order: '"updatedAt" DESC'
+    }).then(function(dbPost){
+      res.json(dbPost);
+    });
+  });
+
+
+  // Get route for retrieving a single post
   app.get("/api/posts/:id", function(req, res) {
     // Here we add an "include" property to our options in our findOne query
     // We set the value to an array of the models we want to include in a left outer join
@@ -38,7 +65,7 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       },
-      include: [db.Author]
+      include: [db.User]
     }).then(function(dbPost) {
       res.json(dbPost);
     });

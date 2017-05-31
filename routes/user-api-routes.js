@@ -14,4 +14,27 @@ module.exports = function(app, passport) {
         failureFlash: true
     }));
 
+    app.delete("/api/users/:id", function(req, res) {
+        db.User.destroy({
+          where: {
+            id: req.params.id
+          }
+        }).then(function(dbUser) {
+          res.json(dbUser);
+        });
+    });
+
+    //optional use case for admins
+    app.put("/api/users/:id", function(req, res){
+        db.User.update(
+            req.body,
+            {
+            where: {
+                id: req.body.id
+                }
+            }).then(function(dbUser){
+                res.json(dbUser);
+            });
+    });
+
 };

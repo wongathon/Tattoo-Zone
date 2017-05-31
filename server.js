@@ -6,20 +6,13 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
-<<<<<<< HEAD
 
-var passport   = require('passport');
-var exphbs     = require('express-handlebars');
-var session    = require('express-session');
- 
-=======
 var passport = require('passport');
 var exphbs = require('express-handlebars');
 var session = require('express-session');
 var flash = require('connect-flash');
 var expressValidator = require('express-validator');
 
->>>>>>> e0a678621d1eb4f9465ab1fd1813942ffd0e1b0d
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -104,7 +97,7 @@ require('./config/passport.js')(passport, db.user);
 require("./routes/html-routes.js")(app);
 require("./routes/post-api-routes.js")(app);
 require("./routes/user-api-routes.js")(app, passport);
-
+require("./routes/comment-api-routes.js")(app);
 
 // Syncing our sequelize models and then starting our express app
 db.sequelize.sync({
