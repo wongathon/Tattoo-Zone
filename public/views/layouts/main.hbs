@@ -13,12 +13,12 @@
    <body>
      <nav class="navbar navbar-default">
        <div class="container-fluid">
-      <a class="navbar-brand"><i class="glyphicon glyphicon glyphicon-tags"></i> Tattoo-Zone</a>
+      <a class="navbar-brand"><i class="icon fa-file-picture-o"></i> Tattoo-Zone</a>
       <ul class="nav nav-pills pull-right">
         <li role="presentation"><a href="/aboutus">About Us</a></li>
         {{#if user}}
            <li role="presentation"><a href="/dashboard">Dashboard</a></li>
-           <li role="presentation"><a href="/logout">Logout</a></li>
+           <li role="presentation"><a href="/logout" class="icon fa-sign-out"> Logout</a></li>
         {{else}}
            <li role="presentation"><a href="/signin">Login</a></li>
            <li role="presentation"><a href="/signup">Register</a></li>
