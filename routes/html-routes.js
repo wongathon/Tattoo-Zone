@@ -37,6 +37,10 @@ module.exports = function(app) {
         });
     });
 
+    app.get('/aboutus', function(req, res){
+      res.render('aboutus');
+    })
+
     function isLoggedIn(req, res, next) {
         if (req.isAuthenticated()) {
           return next();
@@ -46,4 +50,3 @@ module.exports = function(app) {
     };
 
 }
-
