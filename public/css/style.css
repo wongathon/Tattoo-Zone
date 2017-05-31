@@ -28,6 +28,11 @@ body {
 li > a {
     color: white !important;
 }
+
+li > a:hover {
+    background-color: black !important;
+    opacity: 0.7 !important;
+}
 nav.navbar {
   padding-top: 0.5em;
   background-color: #9c3493;
