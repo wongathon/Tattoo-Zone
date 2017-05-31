@@ -1,3 +1,4 @@
+//SAMPLE FILE
 $(document).ready(function() {
   /* global moment */
 

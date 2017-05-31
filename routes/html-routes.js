@@ -17,22 +17,6 @@ module.exports = function(app) {
         res.render('home');
     });
 
-    // cms route loads cms.html
-    app.get("/cms", function(req, res) {
-        res.sendFile(path.join(__dirname, "../public/cms.html"));
-    });
-
-    // blog route loads blog.html
-    app.get("/blog", function(req, res) {
-        res.sendFile(path.join(__dirname, "../public/blog.html"));
-    });
-
-    // authors route loads author-manager.html
-    app.get("/authors", function(req, res) {
-        res.sendFile(path.join(__dirname, "../public/author-manager.html"));
-    });
-
-
 // Handle user registration
     app.get('/signup', function(req, res) {
         res.render('signup', { message: req.flash('signupMessage') });
@@ -59,18 +43,7 @@ module.exports = function(app) {
         } else {
           res.redirect('/signin');
         }
-};
-<<<<<<< HEAD
+    };
 
-
-
-
-
-
-
- 
- 
- 
-=======
 }
->>>>>>> e0a678621d1eb4f9465ab1fd1813942ffd0e1b0d
+

@@ -1,12 +1,17 @@
 module.exports = function(sequelize, DataTypes) {
 
     var Post = sequelize.define("Post", {
-        comment: {
+        caption: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 len: [1]
             }
+        },
+        likes: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 0
         }
     }, {
 
@@ -18,6 +23,11 @@ module.exports = function(sequelize, DataTypes) {
                         allowNull: false
                     }
                 });
+
+                Post.hasMany(models.Comment, {
+                    onDelete: "cascade"
+                });
+
             }
         }
     }
