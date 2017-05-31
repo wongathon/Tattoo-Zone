@@ -518,3 +518,40 @@ textarea {
   margin-top: -20px;
   text-align: right;
 }
+
+/*Tag implementation*/
+#tags{
+  float:left;
+  border:1px solid #ccc;
+  padding:.75px;
+  font-family:Arial;
+}
+#tags > span{
+  cursor:pointer;
+  display:block;
+  float:left;
+  color: #fff;
+  background:#789;
+  padding:3px;
+  padding-right:25px;
+  margin:1px;
+  border-radius: .25em;
+}
+#tags > span:hover{
+  opacity:0.7;
+}
+#tags > span:after{
+ position:absolute;
+ content:"×";
+ border:1px solid;
+ padding:1px 2px;
+ margin-left:2px;
+ font-size:7px;
+}
+#tags > input{
+  color: black;
+  border:0;
+  margin:2px;
+  padding:7px;
+  width:auto;
+}
