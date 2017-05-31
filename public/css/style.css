@@ -29,6 +29,7 @@ li > a {
     color: white !important;
 }
 nav.navbar {
+  padding-top: 0.5em;
   background-color: #9c3493;
   border-color: black;
 }
@@ -39,7 +40,7 @@ nav.navbar {
   /*float: none;*/
   font-size: 2em;
   /*padding-bottom: .25em;*/
-  padding-top: 0.125em;
+  padding-top: 0.375em;
 }
 
 /*.container-fluid {
