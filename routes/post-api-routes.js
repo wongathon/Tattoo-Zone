@@ -7,10 +7,22 @@
 
 // Requiring our models
 var db = require("../models");
-
+var multer  = require('multer');
 // Routes
 // =============================================================
 module.exports = function(app) {
+
+  //File upload
+  var storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+      cb(null, 'public/uploads/')
+    },
+    filename: function(req, file, cb) {
+      cb(null, file.fieldname + '-' + Date.now());
+    }
+  })
+
+  var upload = multer({ storage: storage });
 
   // DEFAULT GET route for getting all of the posts
   app.get("/api/posts", function(req, res) {
@@ -48,7 +60,7 @@ module.exports = function(app) {
   app.get("/api/new-posts", function(req, res){
 
     db.Post.findAll({
-      //***sort by 
+      //***sort by
       order: '"updatedAt" DESC'
     }).then(function(dbPost){
       res.json(dbPost);
@@ -72,11 +84,19 @@ module.exports = function(app) {
   });
 
   // POST route for saving a new post
-  app.post("/api/posts", function(req, res) {
-    db.Post.create(req.body).then(function(dbPost) {
+  // app.post("/api/posts", function(req, res) {
+  //   db.Post.create(req.body).then(function(dbPost) {
+  //     res.json(dbPost);
+  //   });
+  // });
+
+  app.post("/api/posts", upload.single('image'), function(req, res, next) {
+    db.Post.create(req.body, req.file).then(function(dbPost) {
       res.json(dbPost);
+      console.log(req.file.path);
     });
   });
+
 
   // DELETE route for deleting posts
   app.delete("/api/posts/:id", function(req, res) {

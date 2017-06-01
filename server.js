@@ -6,7 +6,7 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
-
+var multer  = require('multer');
 var passport = require('passport');
 var exphbs = require('express-handlebars');
 var session = require('express-session');
@@ -38,9 +38,6 @@ app.use(session({
   secret: 'keyboard cat',
   resave: true,
   saveUninitialized: true
-  // cookie: {
-  //   secure: true
-  // }
 }));
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
