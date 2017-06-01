@@ -2,7 +2,7 @@ module.exports = function(sequelize, DataTypes) {
 
     var Post = sequelize.define("Post", {
         caption: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false,
             validate: {
                 len: [1]
@@ -12,23 +12,30 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             allowNull: false,
             defaultValue: 0
+        },
+        image: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        tags: {
+            type: DataTypes.STRING
         }
     }, {
 
         classMethods: {
-            associate: function(models) {
+        //     associate: function(models) {
 
-                Post.belongsTo(models.User, {
-                    foreignKey: {
-                        allowNull: false
-                    }
-                });
+        //         Post.belongsTo(models.User, {
+        //             foreignKey: {
+        //                 allowNull: false
+        //             }
+        //         });
 
-                Post.hasMany(models.Comment, {
-                    onDelete: "cascade"
-                });
+        //         Post.hasMany(models.Comment, {
+        //             onDelete: "cascade"
+        //         });
 
-            }
+        //     }
         }
     }
     );
