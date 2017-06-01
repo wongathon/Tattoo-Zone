@@ -6,7 +6,7 @@
           <h3>Upload a picture of your tattoo</h3>
         </div>
         <div class="panel-body">
-          <form method="POST" action="/api/post">
+          <form method="POST" enctype="multipart/form-data" action="/api/posts">
             <input type="file" class="form-control" name="image">
             <textarea class="form-control" placeholder="Short Description" name="description"></textarea>
             <div class="form-control" id="tags">
