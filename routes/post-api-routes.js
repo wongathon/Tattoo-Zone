@@ -4,7 +4,6 @@
 
 // Dependencies
 // =============================================================
-
 // Requiring our models
 var db = require("../models");
 var multer  = require('multer');
@@ -16,9 +15,10 @@ module.exports = function(app) {
   var storage = multer.diskStorage({
     destination: function(req, file, cb) {
       cb(null, 'public/uploads/')
+
     },
-    filename: function(req, file, cb) {
-      cb(null, file.fieldname + '-' + Date.now());
+    filename: function (req, file, cb) {
+      cb(null, file.originalname);
     }
   })
 
@@ -77,19 +77,19 @@ module.exports = function(app) {
     });
   });
 
-  // POST route for saving a new post
-  // app.post("/api/posts", function(req, res) {
-  //   db.Post.create(req.body).then(function(dbPost) {
-  //     res.json(dbPost);
-  //   });
-  // });
-
-  app.post("/api/posts", upload.single('image'), function(req, res, next) {
-    db.Post.create(req.body, req.file).then(function(dbPost) {
+  // POST route for saving a new post to the database
+  app.post("/api/posts", upload.single('picture'), function(req, res, next) {
+    console.log(req.body.caption);
+    console.log(req.file.path);
+    db.Post.create({
+      image: req.file.path,
+      caption: req.body.caption,
+      tags: req.body.tags
+    }).then(function(dbPost) {
       res.json(dbPost);
-      console.log(req.file.path);
     });
   });
+
 
 
   // DELETE route for deleting posts

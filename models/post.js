@@ -3,33 +3,37 @@ module.exports = function(sequelize, DataTypes) {
     var Post = sequelize.define("Post", {
         caption: {
             type: DataTypes.TEXT,
-            allowNull: false,
-            validate: {
-                len: [1]
-            }
+
+            allowNull: true
+
         },
         likes: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
             defaultValue: 0
         },
         image: {
             type: DataTypes.STRING,
-            allowNull: false
+
+            allowNull: true
         },
         tags: {
-            type: DataTypes.STRING
+            type: DataTypes.TEXT,
+            allowNull: true
+
         }
     }, {
 
         classMethods: {
         //     associate: function(models) {
 
-        //         Post.belongsTo(models.User, {
-        //             foreignKey: {
-        //                 allowNull: false
-        //             }
-        //         });
+
+                Post.belongsTo(models.User, {
+                    foreignKey: {
+                        allowNull: true
+                    }
+                });
+
 
         //         Post.hasMany(models.Comment, {
         //             onDelete: "cascade"
@@ -38,7 +42,7 @@ module.exports = function(sequelize, DataTypes) {
         //     }
         }
     }
-    );
+  );
     return Post;
 
 };
