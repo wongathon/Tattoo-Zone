@@ -9,7 +9,7 @@
 
           <form method="POST" enctype="multipart/form-data" action="/api/posts">
 
-            <input type="file" class="form-control" name="image">
+            <input type="file" class="form-control" name="picture">
             <textarea class="form-control" placeholder="Short Description" name="caption"></textarea>
             <div class="form-control" id="tags">
                 <input type="text" id="tags" value="" placeholder="Add a tag" name="tags">
@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="col-sm-5">
-      <div class="list-group">
+      <!-- <div class="list-group">
         <a href="#" class="list-group-item" v-for="item in items">
           <h4 class="list-group-item-heading"><i class="glyphicon glyphicon-tag"></i> {{ item.name }}
           <button class="btn btn-primary btn-circle price" v-if="item.price">${{item.price}}</button></h4>
@@ -30,5 +30,5 @@
           <button class="btn btn-xs btn-danger" v-on:click="deleteItem($index)">Delete</button>
         </a>
       </div>
-    </div>
+    </div> -->
   </div>
