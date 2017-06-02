@@ -2,16 +2,21 @@ module.exports = function(sequelize, DataTypes) {
 
     var Post = sequelize.define("Post", {
         caption: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1]
-            }
+            type: DataTypes.TEXT,
+            allowNull: true
         },
         likes: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
             defaultValue: 0
+        },
+        image: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+        tags: {
+            type: DataTypes.TEXT,
+            allowNull: true
         }
     }, {
 
@@ -20,7 +25,7 @@ module.exports = function(sequelize, DataTypes) {
 
                 Post.belongsTo(models.User, {
                     foreignKey: {
-                        allowNull: false
+                        allowNull: true
                     }
                 });
 
@@ -31,7 +36,7 @@ module.exports = function(sequelize, DataTypes) {
             }
         }
     }
-    );
+  );
     return Post;
 
 };
