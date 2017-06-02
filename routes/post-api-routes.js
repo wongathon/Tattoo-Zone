@@ -28,10 +28,6 @@ module.exports = function(app) {
   app.get("/api/posts", function(req, res) {
     db.Post.findAll({ include: [db.User] }).then(function(data) {
       res.json(data);
-      // var postObj = {
-      //   items : data
-      // };
-      // res.render("/home", postObj); 
     });
   });
 
@@ -60,17 +56,19 @@ module.exports = function(app) {
 
 
   // Get route for retrieving a single post
-  app.get("/api/posts/:id", function(req, res) {
-    // Here we add an "include" property to our options in our findOne query
-    // We set the value to an array of the models we want to include in a left outer join
-    // In this case, just db.Author
+  //redirect to post view
+  app.get("/postview/:id", function(req, res) {
     db.Post.findOne({
       where: {
         id: req.params.id
       },
-      include: [db.User]
-    }).then(function(dbPost) {
-      res.json(dbPost);
+      include: [db.User, db.Comment]
+    }).then(function(data) {
+      //res.json(data);
+      var postInfo = {
+        post: data
+      };
+      res.render('postviewer', postInfo);
     });
   });
 
@@ -79,9 +77,10 @@ module.exports = function(app) {
   app.post("/api/posts", upload.single('picture'), function(req, res, next) {
     console.log(req.body.caption);
     console.log(req.file.path);
+    var imgSrc = (req.file.path).slice(7);
 
     db.Post.create({
-      image: req.file.path,
+      image: imgSrc,
       caption: req.body.caption,
       tags: req.body.tags,
       UserId: req.user.id
