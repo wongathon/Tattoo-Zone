@@ -9,10 +9,11 @@ module.exports = function(app){
     });
   });
 
-  app.get("/api/comments/:id", function(req, res) {
-    db.Comment.findOne({
+  //find all comments associated with post
+  app.get("/api/comments/:postid", function(req, res) {
+    db.Comment.findAll({
       where: {
-        id: req.params.id
+        PostId: req.params.postid
       },
       include: [db.User]
     }).then(function(dbComment) {
