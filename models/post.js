@@ -10,7 +10,6 @@ module.exports = function(sequelize, DataTypes) {
         },
         likes: {
             type: DataTypes.INTEGER,
-            allowNull: false,
             defaultValue: 0
         },
         image: {
@@ -23,19 +22,19 @@ module.exports = function(sequelize, DataTypes) {
     }, {
 
         classMethods: {
-        //     associate: function(models) {
+            associate: function(models) {
 
-        //         Post.belongsTo(models.User, {
-        //             foreignKey: {
-        //                 allowNull: false
-        //             }
-        //         });
+                Post.belongsTo(models.User, {
+                    foreignKey: {
+                        allowNull: false
+                    }
+                });
 
-        //         Post.hasMany(models.Comment, {
-        //             onDelete: "cascade"
-        //         });
+                Post.hasMany(models.Comment, {
+                    onDelete: "cascade"
+                });
 
-        //     }
+            }
         }
     }
     );
