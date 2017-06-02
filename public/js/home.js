@@ -2,8 +2,6 @@ $(document).ready(function() {
 
 // postContainer will hold the posts for all users
 var postContainer = $("#all-posts");
-var postSortSelector = $() //needs to return api? 
-
 
 $(document).on("click", "#top-today", getPosts);
 //$(document).on("click", "#all-time", getAllPosts);
@@ -45,7 +43,9 @@ function createPostItem(post){
   newPost.addClass("wrap");
 
   var newPostImg = $('<img>');
-  var imgSrc = post.image; //should point to post model image column **
+  var imgSrc = (post.image).slice(7); //should point to post model image column **
+  console.log(imgSrc);
+
   newPostImg.addClass("img-responsive post-image");
   newPostImg.attr("src", imgSrc);
 
