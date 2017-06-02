@@ -3,21 +3,17 @@ module.exports = function(sequelize, DataTypes) {
     var Post = sequelize.define("Post", {
         caption: {
             type: DataTypes.TEXT,
-
-            allowNull: true
+            allowNull: false
 
         },
         likes: {
             type: DataTypes.INTEGER,
-
-            allowNull: true,
-
+            allowNull: false,
             defaultValue: 0
         },
         image: {
             type: DataTypes.STRING,
-
-            allowNull: true
+            allowNull: false
         },
         tags: {
             type: DataTypes.TEXT,
@@ -31,6 +27,7 @@ module.exports = function(sequelize, DataTypes) {
 
 
                 Post.belongsTo(models.User, {
+
                   foreignKey: {
                         allowNull: false
                     }

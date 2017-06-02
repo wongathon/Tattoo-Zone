@@ -26,15 +26,12 @@ module.exports = function(app) {
 
   // DEFAULT GET route for getting all of the posts
   app.get("/api/posts", function(req, res) {
-    // var query = {};
-    // if (req.query.user_id) {
-    //   query.UserId = req.query.user_id;
-    // }
-    // Here we add an "include" property to our options in our findAll query
-    // We set the value to an array of the models we want to include in a left outer join
-    // In this case, just db.Author
-    db.Post.findAll({}).then(function(dbPost) {
-      res.json(dbPost);
+    db.Post.findAll({ include: [db.User] }).then(function(data) {
+      res.json(data);
+      // var postObj = {
+      //   items : data
+      // };
+      // res.render("/home", postObj); 
     });
   });
 
@@ -80,17 +77,20 @@ module.exports = function(app) {
 
   // POST route for saving a new post to the database
   app.post("/api/posts", upload.single('picture'), function(req, res, next) {
+
+    console.log(req.body.caption);
+    console.log(req.file.path);
     console.log(req.user);
+
     db.Post.create({
       image: req.file.path,
       caption: req.body.caption,
       tags: req.body.tags,
       UserId: req.user.id
 
-    }
-
-    ).then(function(dbPost) {
-      res.json(dbPost);
+    }).then(function(dbPost) {
+      res.redirect("/dashboard");
+      //res.json(dbPost);
 
     });
   });
