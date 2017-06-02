@@ -77,6 +77,7 @@ module.exports = function(app) {
     });
   });
 
+
   // POST route for saving a new post to the database
   app.post("/api/posts", upload.single('picture'), function(req, res, next) {
     console.log(req.body.caption);
@@ -87,6 +88,7 @@ module.exports = function(app) {
       tags: req.body.tags
     }).then(function(dbPost) {
       res.json(dbPost);
+
     });
   });
 

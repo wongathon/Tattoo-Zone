@@ -11,21 +11,21 @@ module.exports = function(sequelize, DataTypes) {
     }, {
 
          classMethods: {
-        //     associate: function(models) {
+            associate: function(models) {
 
-        //         Comment.belongsTo(models.User, {
-        //             foreignKey: {
-        //                 allowNull: false
-        //             }
-        //         });
+                Comment.belongsTo(models.User, {
+                    foreignKey: {
+                        allowNull: false
+                    }
+                });
 
-        //         Comment.belongsTo(models.Post, {
-        //             foreignKey: {
-        //                 allowNull: false
-        //             }
-        //         });
+                Comment.belongsTo(models.Post, {
+                    foreignKey: {
+                        allowNull: false
+                    }
+                });
                 
-        //     }
+            }
         }
     }
     );
