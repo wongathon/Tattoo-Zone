@@ -1,7 +1,10 @@
 
+{{#each Posts}}
     <div class="col-md-4 col-md-offset-2">
-      <img class="img-responsive" id="post-image" src="{{post.image}}" alt="{{post.caption}}">
+      <img class="img-responsive" id="post-image" src="{{image}}" alt="{{post.caption}}">
     </div>
+{{/each}}
+
 	<div class="col-md-5">
 		<div class="panel panel-default" id="post-details">
 
@@ -19,11 +22,13 @@
 				{{/each}}
 				{{/if}}
 			</div>
+
 			<div class="model" id="new-comment">
 				<form class="model-form" action="/api/comments" method="POST">
 					<input type="text" placeholder="Enter comment here" id="c1"name="new_comment">
 					<input type="submit" value="Submit">
 				</form>
 			</div> 
+
 		</div>
-	</div>	
+	</div>

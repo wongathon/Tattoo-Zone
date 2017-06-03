@@ -564,3 +564,8 @@ textarea {
   margin-top: -20px;
   text-align: right;
 }
+
+#postimage {
+  overflow: hidden;
+  width: 10em;
+}
