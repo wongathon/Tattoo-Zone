@@ -75,22 +75,13 @@ module.exports = function(app) {
 
   // POST route for saving a new post to the database
   app.post("/api/posts", upload.single('picture'), function(req, res, next) {
-
-    console.log(req.body.caption);
-    console.log(req.file.path);
-
-    var imgSrc = (req.file.path).slice(7);
-
-
     db.Post.create({
-      image: imgSrc,
+      image: req.file.path,
       caption: req.body.caption,
       tags: req.body.tags,
       UserId: req.user.id
-
     }).then(function(dbPost) {
       res.redirect("/dashboard");
-      //res.json(dbPost);
 
     });
   });
