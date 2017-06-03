@@ -2,7 +2,9 @@ $(document).ready(function() {
   // ::: TAGS BOX
    $('#tags').tagbox({
      items: [],
-     allowNew: true
+     allowNew: true,
+     className: "form-control",
+     allowDuplicates: false
    });
 
 });
