@@ -12,13 +12,18 @@
 		</div>
 		<div class="panel panel-default" id="comments-sect">
 			<div class="comments">
-			<h3>Comments</h3>
-			{{#if post.Comments}}
-			{{#each post.Comments}}
-				<p>User#{{this.id}} said: {{this.text}}</p>
-			{{/each}}
-			{{/if}}
+				<h3>Comments</h3>
+				{{#if post.Comments}}
+				{{#each post.Comments}}
+					<p><span id="uName"></span><span id="uID">{{this.id}}</span> said: {{this.text}}</p>
+				{{/each}}
+				{{/if}}
 			</div>
-		
+			<div class="model" id="new-comment">
+				<form class="model-form" action="/api/comments" method="POST">
+					<input type="text" placeholder="Enter comment here" id="c1"name="new_comment">
+					<input type="submit" value="Submit">
+				</form>
+			</div> 
 		</div>
 	</div>	
