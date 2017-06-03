@@ -6,14 +6,12 @@
           <h3>Upload a picture of your tattoo</h3>
         </div>
         <div class="panel-body">
-
           <form method="POST" enctype="multipart/form-data" action="/api/posts">
-
             <input type="file" class="form-control" name="picture">
             <textarea class="form-control" placeholder="Short Description" name="caption"></textarea>
-            <div class="form-control" id="tags">
-                <input type="text" id="tags" value="" placeholder="Add a tag" name="tags">
-            </div>
+            <input type="text" value="" id="tags" placeholder="Add tags" name="tags" autocapitalize="off" style="display: none;">
+            <br/>
+            <br/>
             <button class="btn btn-primary" id="addPost">Submit</button>
           </form>
         </div>
