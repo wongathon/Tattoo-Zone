@@ -25,7 +25,20 @@ module.exports = function(app) {
   var upload = multer({ storage: storage });
 
   // DEFAULT GET route for getting all of the posts
-  app.get("/api/posts", function(req, res) {
+  app.post("/api/userposts", function(req, res) {
+    db.Post.findAll({ include: [{
+      where: {
+        UserId: req.user.id
+      }
+    }]
+  }).then(function(data) {
+      res.json(data);
+    });
+  });
+
+
+  // DEFAULT GET route for getting all of the posts
+  app.get("/api/userposts", function(req, res) {
     db.Post.findAll({ include: [db.User] }).then(function(data) {
       res.json(data);
     });
@@ -86,8 +99,6 @@ module.exports = function(app) {
 
     });
   });
-
-
 
   // DELETE route for deleting posts
   app.delete("/api/posts/:id", function(req, res) {
