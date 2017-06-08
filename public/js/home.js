@@ -79,6 +79,7 @@ function createPostItem(post){
   overlayText.append(thumbIcon);
   overlayText.append(likesNum+" ");
   overlayText.append(bubbleIcon);
+  overlayText.append("0");
   overlayText.append(commentsNum);
 
   //newPostOverlay-ex

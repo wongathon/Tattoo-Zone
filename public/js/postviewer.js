@@ -2,12 +2,12 @@
 $(document).ready(function () {
 
   //new comment
-  $("#new-comment").submit(function(e){
-    var comment = $("#c1").val();
+  $("#commentSumbit").submit(function(e){
+    var comment = $("#comment").val();
 
     var url = window.location.href;
-    var postId = url.slice();
-
+    console.log()
+    var postId = url.slice(24);
 
     $.post('/api/comments', {
       text: comment,

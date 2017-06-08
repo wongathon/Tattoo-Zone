@@ -24,7 +24,7 @@
 
    });
 
-
+   //local SIGN UP
    passport.use('local-signup', new LocalStrategy(
 
      {
@@ -54,6 +54,7 @@
            var data = {
              email: email,
              password: userPassword,
+             username: req.body.username,
              firstname: req.body.firstname,
              lastname: req.body.lastname
            };
