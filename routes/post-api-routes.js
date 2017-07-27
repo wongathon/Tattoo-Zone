@@ -25,13 +25,8 @@ module.exports = function(app) {
   var upload = multer({ storage: storage });
 
   // DEFAULT GET route for getting all of the posts
-  app.post("/api/userposts", function(req, res) {
-    db.Post.findAll({ include: [{
-      where: {
-        UserId: req.user.id
-      }
-    }]
-  }).then(function(data) {
+  app.get("/api/posts", function(req, res) {
+    db.Post.findAll({ }).then(function(data) {
       res.json(data);
     });
   });

@@ -6,11 +6,9 @@
    var User = user;
    var LocalStrategy = require('passport-local').Strategy;
 
-
    passport.serializeUser(function(user, done) {
      done(null, user.id);
    });
-
 
    // used to deserialize the user
    passport.deserializeUser(function(id, done) {
@@ -21,12 +19,10 @@
          done(user.errors, null);
        }
      });
-
    });
 
    //local SIGN UP
    passport.use('local-signup', new LocalStrategy(
-
      {
        usernameField: 'email',
        passwordField: 'password',
@@ -34,7 +30,6 @@
      },
 
      function(req, email, password, done) {
-
 
        var generateHash = function(password) {
          return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
@@ -48,7 +43,6 @@
 
          if (user) {
            return done(null, false, req.flash('signupMessage', 'That email is already taken'));
-
          } else {
            var userPassword = generateHash(password);
            var data = {
@@ -59,22 +53,18 @@
              lastname: req.body.lastname
            };
 
-
            User.create(data).then(function(newUser, created) {
              if (!newUser) {
                return done(null, false, req.flash('userExist', 'You are already registered. Please sign in!'));
              }
-
              if (newUser) {
                return done(null, newUser, req.flash('userCreated', 'You are now registered and logged in!'));
              }
-
            });
          }
-
        });
 
-     }
+     } //function done. 
 
    ));
 
@@ -103,20 +93,16 @@
          if (!user) {
            return done(null, false, req.flash('signinError', 'Email does not exist'));
          }
-
          if (!isValidPassword(user.password, password)) {
-
            return done(null, false, req.flash('passwordError', 'Incorrect password.'));
          }
 
          var userinfo = user.get();
-
          return done(null, userinfo);
 
        }).catch(function(err) {
 
-         console.log("Error:", err);
-
+          console.log("Error:", err);
          return done(null, false, req.flash('genError', 'Something went wrong with your Signin'));
 
        });
