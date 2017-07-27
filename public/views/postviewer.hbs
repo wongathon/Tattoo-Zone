@@ -18,10 +18,14 @@
 			<h3>Comments</h3>
 			{{#if post.Comments}}
 			{{#each post.Comments}}
-				<p><span id="uName"></span><span id="uID">{{this.id}}</span> said: {{this.text}}</p>
+				<p id="uGroup">
+					<span id="uName"></span>
+					<span id="uID" hidden>
+					{{this.UserId}}</span> said: {{this.text}}
+				</p>
 			{{/each}}
 			{{else}}
-				<p>No comments yet!</p>
+				<p id="comments-none">No comments yet!</p>
 			{{/if}}
 		</div>
 		<hr>

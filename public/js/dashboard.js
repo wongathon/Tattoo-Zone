@@ -13,6 +13,9 @@ var url = window.location.search;
 
 function getPosts(user) {
     userId = user || "";
+
+    console.log(userId); //empty. 
+
     if (userId) {
       userId = "/?user_id=" + userId;
     }
