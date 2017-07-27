@@ -51,7 +51,7 @@ function createPostItem(post){
   console.log(post);
   var newPost = $("<div>");
   newPost.addClass("col-md-3 col-sm-4 col-xs-6");
-  newPost.addClass("post-link");
+  newPost.addClass("post-link text-center");
   newPost.attr("id", post.id);
 
   var newPostImg = $('<img>');
@@ -74,7 +74,7 @@ function createPostItem(post){
     return res;
   });
 
-  console.log(commentsNum);
+  console.log(commentsNum); //work on display of comments. 
 
   overlayText.append(thumbIcon);
   overlayText.append(likesNum+" ");

@@ -378,6 +378,8 @@ nav.navbar {
 .post-link {
   width: 293px;
   height: 293px;
+  cursor: pointer;
+  margin: 20px;
 }
 
 .image-overlay {
@@ -514,7 +516,7 @@ input, textarea {
   background: none;
   background-image: none;
   border: 1px solid #a0b3b0;
-  color: #ffffff;
+  color: #000000;
   border-radius: 0;
   -webkit-transition: border-color .25s ease, box-shadow .25s ease;
   transition: border-color .25s ease, box-shadow .25s ease;

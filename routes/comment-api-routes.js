@@ -22,7 +22,11 @@ module.exports = function(app){
   });
 
   app.post("/api/comments", function(req, res) {
-    db.Comment.create(req.body).then(function(dbPost) {
+    db.Comment.create({
+      text: req.body.text,
+      PostId: req.body.PostId,
+      UserId: req.user.id
+    }).then(function(dbPost) {
       res.json(dbPost);
     });
   });

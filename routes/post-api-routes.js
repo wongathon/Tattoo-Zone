@@ -70,7 +70,7 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       },
-      include: [db.User, db.Comment]
+      include: [db.User, db.Comment] //WHAT DOES THIS DO???f
     }).then(function(data) {
       //res.json(data);
       var postInfo = {
