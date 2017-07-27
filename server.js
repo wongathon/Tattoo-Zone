@@ -95,9 +95,10 @@ app.use('/postview', express.static('public'));
 // Routes =============================================================
 
 require('./config/passport.js')(passport, db.user);
+require("./routes/user-api-routes.js")(app, passport);
+
 require("./routes/html-routes.js")(app);
 require("./routes/post-api-routes.js")(app);
-require("./routes/user-api-routes.js")(app, passport);
 require("./routes/comment-api-routes.js")(app);
 
 // Syncing our sequelize models and then starting our express app
