@@ -26,7 +26,7 @@ $(document).ready(function () {
     }, function(data){
       console.log(data);
       $("#comment").val("");
-      $("#comments-none").val("");
+      $("#comments-none").html("");
       $(".comments").append("<p><span id=\"uName\"></span><span id="+data.UserId+" hidden></span> said: "+data.text+"</p>")
     });
     //maybe necessary to reload page with data and update usernames
