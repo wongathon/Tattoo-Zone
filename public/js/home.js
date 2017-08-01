@@ -83,10 +83,9 @@ function createPostItem(post){
   overlayText.append(commentsNum);
 
   //newPostOverlay-ex
-  newPost.append(overlayText);
-
 
   newPost.append(newPostImg);
+  newPost.append(overlayText);
   newPost.append(newPostOverlay);
 
   return newPost;

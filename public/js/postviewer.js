@@ -28,9 +28,13 @@ $(document).ready(function () {
       $("#comment").val("");
       $("#comments-none").html("");
       $(".comments").append("<p><span id=\"uName\"></span><span id="+data.UserId+" hidden></span> said: "+data.text+"</p>")
+    }).fail(function(xhr, status, error) {
+        alert("You must login to comment!");
     });
     //maybe necessary to reload page with data and update usernames
     e.preventDefault();
   });
+
+
 
 });
